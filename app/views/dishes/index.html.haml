@@ -1,7 +1,10 @@
-%h1 Dishes
+%h2 Menu
 
-- @dishes.each do |dish|
-  = dish.name
-  = dish.description
-  = dish.price
-  = dish.category
+- @categories.each do |category|
+  %div{id: dom_id(category)}
+  %h3= category.name
+  - category.dishes.each do |dish|
+    %div{id: dom_id(dish)}
+      %p= dish.name
+      %p= dish.description
+      %p=dish.price

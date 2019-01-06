@@ -1,13 +1,7 @@
 Given("the following dishes exist") do |table|
   table.hashes.each do |dish|
-    Dish.create!(dish)
-    # FactoryBot.create(:dish, dish)
+      dish_category = Category.find_or_create_by(name: dish[:category])
+      dish.except!('category')
+      Dish.create(dish.merge(category: dish_category))
   end
 end
-
-
-# Given("the following articles exists") do |table|
-#   table.hashes.each do |article|
-#     Article.create!(article)
-#   end
-# end
