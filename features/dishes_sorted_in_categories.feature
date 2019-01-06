@@ -1,4 +1,5 @@
 Feature: Visitor can see dishes sorted in categories
+
     As a visitor,
     In order to navigate the products
     I would like to see the products sorted in categories
@@ -12,6 +13,7 @@ Feature: Visitor can see dishes sorted in categories
         | cake     | homemade             | 30    | dessert  |
 
         When I visit the page
+            And show me the page
         Then I should see "olives" in the "starter" category
         And I should see "pizza" in the "main" category
         And I should see "pasta" in the "main" category
